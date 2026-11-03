@@ -1,0 +1,22 @@
+id = "herdr-new-space"
+name = "New Space"
+version = "0.1.0"
+
+min_herdr_version = "0.9.0"
+description = "Pick a directory with fzf and open a new space there"
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "new"
+title = "New space in a picked directory"
+description = "Pick a directory from zoxide and your project roots, then open a space there"
+contexts = ["workspace"]
+command = ["sh", "new-space.sh", "--open"]
+
+[[panes]]
+id = "picker"
+title = "new space"
+placement = "popup"
+width = "60%"
+height = "50%"
+command = ["sh", "new-space.sh"]
