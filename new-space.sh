@@ -58,14 +58,4 @@ choice="$(
 
 dir="$(expand_home "$choice")"
 
-if command -v jq >/dev/null 2>&1; then
-  existing="$(
-    "$herdr" pane list 2>/dev/null |
-      jq -r --arg dir "$dir" 'first(.result.panes[] | select(.cwd == $dir) | .workspace_id) // empty' 2>/dev/null
-  )" || existing=""
-  if [ -n "$existing" ] && "$herdr" workspace focus "$existing" >/dev/null 2>&1; then
-    exit 0
-  fi
-fi
-
 "$herdr" workspace create --cwd "$dir" --focus >/dev/null || notify "could not open $dir"

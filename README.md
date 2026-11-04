@@ -2,7 +2,7 @@
 
 A [herdr](https://herdr.dev) plugin that opens a new space in a directory you pick.
 
-`[terminal] new_cwd` applies to panes, tabs and spaces alike, so a fixed default directory breaks `follow` for splits. This picks the directory per space instead: a popup lists your [zoxide](https://github.com/ajeetdsouza/zoxide) directories and project roots, fuzzy-find one with [fzf](https://github.com/junegunn/fzf), and the space opens there. If a space already has a pane in that directory, it focuses that space instead. Esc cancels.
+`[terminal] new_cwd` applies to panes, tabs and spaces alike, so a fixed default directory breaks `follow` for splits. This picks the directory per space instead: a popup lists your [zoxide](https://github.com/ajeetdsouza/zoxide) directories and project roots, fuzzy-find one with [fzf](https://github.com/junegunn/fzf), and the space opens there. Esc cancels.
 
 ## Install
 
@@ -10,7 +10,7 @@ A [herdr](https://herdr.dev) plugin that opens a new space in a directory you pi
 herdr plugin install reobin/herdr-new-space
 ```
 
-Requires herdr 0.9.0 or newer and `fzf`. `zoxide` and `jq` are optional: without zoxide the list is just your roots, and without jq every pick opens a new space.
+Requires herdr 0.9.0 or newer and `fzf`. `zoxide` is optional: without it the list is just your roots.
 
 ## Use
 
